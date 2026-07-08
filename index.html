@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260708-05-579f504"}');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Second Chapter ❤️</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=Dancing+Script:wght@400;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--gold:#FFD54F;--deep:#020617;--midnight:#0F172A;--warm:#F8F6F2;--rose:#f4a0b5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Cormorant Garamond',serif;background:var(--deep);color:var(--warm);overflow-x:hidden;}
+.font-dancing{font-family:'Dancing Script',cursive;}
+.font-poppins{font-family:'Poppins',sans-serif;}
+#loading{position:fixed;inset:0;z-index:9999;background:var(--deep);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.5s;}
+#loading.hide{opacity:0;pointer-events:none;}
+#loading canvas{position:absolute;inset:0;}
+#loading .content{position:relative;z-index:1;text-align:center;}
+.scene{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;overflow:hidden;}
+.scene-line{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s;}
+.scene-line.visible{opacity:1;transform:translateY(0);}
+.stars-canvas{position:absolute;inset:0;pointer-events:none;}
+.moon{width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff8e1,var(--gold));box-shadow:0 0 60px var(--gold),0 0 120px rgba(255,213,79,.3);cursor:pointer;transition:transform .3s;}
+.moon:hover{transform:scale(1.1);}
+.gold-frame{border:4px solid var(--gold);padding:8px;box-shadow:0 0 40px rgba(255,213,79,.4),inset 0 0 20px rgba(255,213,79,.1);border-radius:8px;position:relative;overflow:hidden;}
+.gold-frame img{animation:slowZoom 12s ease-in-out infinite alternate;}
+@keyframes slowZoom{from{transform:scale(1);}to{transform:scale(1.08);}}
+.glass{background:rgba(15,23,42,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,213,79,.15);border-radius:16px;padding:2rem;}
+.rain-drop{position:absolute;width:2px;background:linear-gradient(transparent,rgba(200,220,255,.6));animation:fall linear infinite;pointer-events:none;}
+@keyframes fall{to{transform:translateY(100vh);}}
+.confetti{position:absolute;width:8px;height:8px;border-radius:2px;animation:confettiFall 3s ease-in forwards;pointer-events:none;}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1;}100%{transform:translateY(600px) rotate(720deg);opacity:0;}}
+.typewriter-char{opacity:0;display:inline;}.typewriter-char.show{opacity:1;}
+.particle{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.6;animation:floatUp 4s ease-in-out infinite;pointer-events:none;}
+@keyframes floatUp{0%,100%{transform:translateY(0) translateX(0);opacity:.6;}50%{transform:translateY(-30px) translateX(10px);opacity:1;}}
+.music-btn{position:fixed;top:1rem;right:1rem;z-index:100;width:44px;height:44px;border-radius:50%;background:rgba(15,23,42,.8);border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);}
+#easter-egg{position:fixed;inset:0;z-index:9998;background:rgba(2,6,23,.95);display:none;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:2rem;}
+#easter-egg.show{display:flex;}
+.fade-in{animation:fadeIn 1.5s forwards;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.star-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;transition:all 3s ease-in-out;}
+.sunrise-bg{background:linear-gradient(to top,#ff9a56,#ffcd38,#87ceeb,#0F172A);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#ffc107);color:var(--deep);font-weight:600;padding:.75rem 2rem;border-radius:9999px;border:none;cursor:pointer;font-family:'Poppins',sans-serif;font-size:1rem;transition:transform .2s,box-shadow .2s;}
+.btn-gold:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(255,213,79,.5);}
+.to-be-continued{opacity:0;transition:opacity 2s;}
+.to-be-continued.show{opacity:1;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+
+
+</head>
+<body data-template-id="__page-root">
+<div id="loading">
+<canvas class="stars-canvas" id="loadingStars"></canvas>
+<div class="content">
+<h1 class="text-3xl md:text-5xl font-bold mb-4 font-dancing" style="color:var(--gold);">Our Second Chapter ❤️</h1>
+<p class="text-lg md:text-xl italic" style="color:var(--warm);opacity:.8;">A story that never truly ended.</p>
+</div>
+</div><button aria-label="Toggle music" class="music-btn" id="musicBtn">♪</button>
+<div id="easter-egg">
+<p class="text-2xl md:text-3xl font-dancing" style="color:var(--gold);">Promise me one thing... Let's never become strangers again.</p>
+<p class="text-4xl mt-4">❤️</p><button class="btn-gold mt-6" onclick="document.getElementById('easter-egg').classList.remove('show')">Close</button>
+</div>
+<section class="scene" id="scene1">
+<canvas class="stars-canvas" id="scene1Stars"></canvas>
+<div class="moon mb-8" id="theMoon"></div>
+<div class="text-center relative z-10">
+<p class="scene-line text-2xl md:text-4xl mb-3" style="color:var(--warm);font-weight:600;">Dear Baby...</p>
+<p class="scene-line text-xl md:text-2xl mb-3" style="color:var(--warm);opacity:.8;">Before I wish you Happy Birthday...</p>
+<p class="scene-line text-xl md:text-2xl mb-6" style="color:var(--warm);opacity:.8;">There is something I want you to know...</p><button class="scene-line btn-gold" id="beginBtn">Begin Our Story</button>
+</div>
+</section>
+<section class="scene" id="scene2" style="display:none;">
+<div class="glass max-w-lg w-full text-center">
+<h2 class="scene-line text-3xl md:text-4xl font-bold mb-6 font-dancing" style="color:var(--gold);">Our Beginning</h2>
+<p class="scene-line text-lg mb-2">Somewhere in January...</p>
+<p class="scene-line text-lg mb-2">At our college function...</p>
+<p class="scene-line text-lg mb-2">Among hundreds of people...</p>
+<p class="scene-line text-lg mb-2" style="color:var(--gold);font-weight:600;">My eyes found you.</p>
+<p class="scene-line text-lg mb-2">I don't remember the exact date...</p>
+<p class="scene-line text-lg mb-2">But I'll never forget the feeling.</p>
+<p class="scene-line text-lg mb-2">Because...</p>
+<p class="scene-line text-lg mb-4" style="color:var(--gold);font-weight:600;">That was the day my story with you began.</p>
+</div>
+</section>
+<section class="scene" id="scene3" style="display:none;">
+<div class="gold-frame max-w-sm w-full relative" id="photoFrame"><img alt="Our Memory" class="w-full rounded" loading="lazy" src="photo.png"/>
+<div id="photoParticles"></div>
+</div>
+<div class="glass mt-6 max-w-lg text-center">
+<p class="scene-line text-lg mb-2">This may be our only picture together...</p>
+<p class="scene-line text-lg mb-2">But every time I look at it...</p>
+<p class="scene-line text-lg mb-2" style="color:var(--gold);font-weight:600;">I remember how happy we were.</p>
+<p class="scene-line text-lg">And I hope we create many more memories together.</p>
+</div>
+</section>
+<section class="scene" id="scene4" style="display:none;background:linear-gradient(to bottom,#1a1a2e,#16213e);">
+<div id="rainContainer" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"></div>
+<div class="glass max-w-lg w-full text-center relative z-10">
+<p class="scene-line text-lg mb-2">Life changed. We stopped talking.</p>
+<p class="scene-line text-lg mb-2">Days became weeks. Weeks became months.</p>
+<p class="scene-line text-lg mb-2">Yet somehow...</p>
+<p class="scene-line text-lg mb-2" style="color:var(--rose);font-weight:600;">You never completely left my heart.</p>
+<p class="scene-line text-lg mb-2">I never blamed you.</p>
+<p class="scene-line text-lg" style="font-style:italic;">Some things just need time.</p>
+</div>
+</section>
+<section class="scene sunrise-bg" id="scene5" style="display:none;">
+<div class="glass max-w-lg w-full text-center">
+<p class="scene-line text-lg mb-2" style="color:#0F172A;">One day...</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;font-weight:600;">You came back.</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;">You apologized.</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;font-weight:600;">And I believed you.</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;">Not because forgetting is easy...</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;">But because some people are worth another chance.</p>
+<p class="scene-line text-lg mb-2" style="color:#0F172A;">And because...</p>
+<p class="scene-line text-lg" style="color:#b91c1c;font-weight:700;">My heart still wanted you.</p>
+</div>
+</section>
+<section class="scene" id="scene6" style="display:none;background:radial-gradient(ellipse at center,#1a0a2e,var(--deep));">
+<div id="confettiContainer" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"></div>
+<div class="text-center relative z-10">
+<h1 class="scene-line text-4xl md:text-6xl font-bold font-dancing mb-4" style="color:var(--gold);">Happy Birthday Yash ❤️</h1>
+<p class="scene-line text-xl md:text-2xl font-poppins" style="color:var(--warm);">May this year bring you happiness, peace, success and endless smiles.</p>
+<div class="text-6xl mt-6 scene-line">
+     🎂
+    </div>
+</div>
+</section>
+<section class="scene" id="scene7" style="display:none;background:var(--midnight);">
+<div class="glass max-w-lg w-full" style="background:rgba(248,246,242,.05);border-color:rgba(255,213,79,.2);">
+<div class="font-dancing text-xl md:text-2xl leading-relaxed" id="letterContent" style="color:var(--warm);min-height:300px;"></div>
+</div>
+</section>
+<section class="scene" id="scene8" style="display:none;">
+<canvas class="stars-canvas" id="scene8Stars"></canvas>
+<div id="heartFormation" style="position:absolute;inset:0;pointer-events:none;"></div>
+<div class="text-center relative z-10">
+<p class="scene-line text-lg mb-2">Some stories deserve a second chapter...</p>
+<p class="scene-line text-lg mb-2">Thank you for finding your way back to me.</p>
+<p class="scene-line text-lg mb-2" style="color:var(--gold);font-weight:700;">Happy Birthday Baby. I Love You.</p>
+<p class="scene-line text-lg mb-4 font-dancing" style="color:var(--rose);">— Mayuu ❤️</p>
+<p class="scene-line text-xl font-dancing" style="color:var(--warm);font-style:italic;">Thank you for asking me to write our second chapter together.</p>
+</div>
+<div class="to-be-continued absolute bottom-10 text-center" id="tbc">
+<p class="text-2xl font-dancing" style="color:var(--gold);">To Be Continued...</p>
+</div>
+</section>
+
+<script>
+function initStars(canvasId){
+const c=document.getElementById(canvasId);if(!c)return;
+const ctx=c.getContext('2d');
+let stars=[];
+function resize(){c.width=c.parentElement.offsetWidth;c.height=c.parentElement.offsetHeight;stars=[];for(let i=0;i<120;i++)stars.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.5+.5,s:Math.random()*0.02+0.005});}
+resize();window.addEventListener('resize',resize);
+function draw(){ctx.clearRect(0,0,c.width,c.height);stars.forEach(s=>{s.r+=Math.sin(Date.now()*s.s)*0.01;ctx.beginPath();ctx.arc(s.x,s.y,Math.abs(s.r),0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+(0.4+Math.sin(Date.now()*s.s)*0.4)+')';ctx.fill();});requestAnimationFrame(draw);}
+draw();
+}
+
+initStars('loadingStars');
+setTimeout(()=>{document.getElementById('loading').classList.add('hide');setTimeout(()=>{document.getElementById('loading').style.display='none';showScene('scene1');},1500);},3000);
+
+let currentScene=null;
+function showScene(id){
+const el=document.getElementById(id);el.style.display='flex';
+currentScene=id;
+const lines=el.querySelectorAll('.scene-line');
+lines.forEach((l,i)=>setTimeout(()=>l.classList.add('visible'),400+i*600));
+if(id==='scene1')initStars('scene1Stars');
+if(id==='scene4')createRain();
+if(id==='scene6')createConfetti();
+if(id==='scene7')startTypewriter();
+if(id==='scene8'){initStars('scene8Stars');formHeart();setTimeout(()=>document.getElementById('tbc').classList.add('show'),8000);}
+}
+
+document.getElementById('beginBtn').addEventListener('click',()=>{
+document.getElementById('scene1').style.display='none';
+showScene('scene2');
+autoAdvance(['scene3','scene4','scene5','scene6','scene7','scene8'],8000);
+});
+
+function autoAdvance(scenes,delay){
+let i=0;
+function next(){
+if(i>=scenes.length)return;
+setTimeout(()=>{
+const prev=document.querySelectorAll('.scene:not([style*="display: none"])');
+prev.forEach(p=>{if(p.id!==scenes[i])p.style.display='none';});
+showScene(scenes[i]);i++;next();
+},delay);
+}
+next();
+}
+
+function createRain(){
+const c=document.getElementById('rainContainer');
+for(let i=0;i<60;i++){const d=document.createElement('div');d.className='rain-drop';d.style.left=Math.random()*100+'%';d.style.height=Math.random()*80+40+'px';d.style.animationDuration=Math.random()*1+.5+'s';d.style.animationDelay=Math.random()*2+'s';c.appendChild(d);}
+}
+
+function createConfetti(){
+const c=document.getElementById('confettiContainer');
+const colors=['#FFD54F','#f4a0b5','#fff','#ffc107','#e91e63'];
+for(let i=0;i<50;i++){const d=document.createElement('div');d.className='confetti';d.style.left=Math.random()*100+'%';d.style.top='-10px';d.style.background=colors[Math.floor(Math.random()*colors.length)];d.style.animationDelay=Math.random()*2+'s';c.appendChild(d);}
+}
+
+function startTypewriter(){
+const text=`Baby,\n\nHappy Birthday.\n\nThank you for coming back into my life.\nThank you for giving us another chance.\n\nLife wasn't perfect.\nNeither were we.\n\nBut today...\nI don't want to remember the pain.\nI want to celebrate you.\n\nI pray this year brings you\nhappiness. Peace. Success.\nGood health.\nA beautiful smile every day.\n\nNo matter where life takes us...\nToday... I choose us. Again.\n\nHappy Birthday Baby.\nI Love You.\n\n— Mayuu ❤️`;
+const el=document.getElementById('letterContent');
+let i=0;
+function type(){if(i<text.length){const ch=text[i];if(ch==='\n')el.innerHTML+='<br>';else el.innerHTML+='<span class="typewriter-char show">'+ch+'</span>';i++;setTimeout(type,30);}};
+type();
+}
+
+function formHeart(){
+const container=document.getElementById('heartFormation');
+const dots=[];const n=80;
+for(let i=0;i<n;i++){const d=document.createElement('div');d.className='star-dot';d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';container.appendChild(d);dots.push(d);}
+setTimeout(()=>{
+const cx=container.offsetWidth/2,cy=container.offsetHeight/2;
+dots.forEach((d,i)=>{
+const t=(i/n)*Math.PI*2;
+const x=16*Math.pow(Math.sin(t),3);
+const y=-(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t));
+d.style.left=(cx+x*8)+'px';d.style.top=(cy+y*8)+'px';d.style.background='var(--gold)';d.style.boxShadow='0 0 6px var(--gold)';
+});
+},2000);
+}
+
+(function(){const f=document.getElementById('photoParticles');if(!f)return;for(let i=0;i<12;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.top=Math.random()*100+'%';p.style.animationDelay=Math.random()*3+'s';f.appendChild(p);}})();
+
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a17d53b3d23c3977',t:'MTc4MzQ5NTIzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.35;
+
+musicBtn.addEventListener("click", function () {
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = "⏸";
+    } else {
+        music.pause();
+        musicBtn.textContent = "♪";
+    }
+});</script><audio id="bgMusic" loop="">
+<source src="until i found you.mpeg" type="audio/mpeg"/>
+    Your browser does not support the audio element.
+</audio><script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const music=document.getElementById('bgMusic');
+ const btn=document.getElementById('musicBtn');
+ if(!music||!btn) return;
+ music.volume=0.35;
+ btn.onclick=()=>{
+   if(music.paused){music.play().catch(()=>{});btn.textContent='⏸';}
+   else{music.pause();btn.textContent='♪';}
+ };
+});
+</script></body>
+</html>
